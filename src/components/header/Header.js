@@ -1,7 +1,8 @@
 import React from "react";
-import { Container, Nav, Navbar } from "react-bootstrap";
+import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Logo from "./../../logo.svg"
-import { Link } from "react-router-dom";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
+import HeaderOption from "./HeaderOption";
 
 class Header extends React.Component {
     render() {
@@ -14,25 +15,40 @@ class Header extends React.Component {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                    <Nav.Link>
-                        <Link to="/" class="Avoid-style">Home</Link>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <Link to="/education" class="Avoid-style">Education</Link>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <Link to="work-experience" class="Avoid-style">Work Experience</Link>
-                    </Nav.Link>
-                    <Nav.Link>
-                        <Link to="projects" class="Avoid-style">Projects</Link>
-                    </Nav.Link>
+                <Nav>
+                    {headerOptions.map((option) => <HeaderOption title={option.title} url={option.url} />)}
                 </Nav>
+                <NavbarCollapse className="justify-content-end">
+                    <NavDropdown title={data.name}>
+                        <NavDropdown.Item>Profile</NavDropdown.Item>
+                        <NavDropdown.Item>User Settings</NavDropdown.Item>
+                        <NavDropdown.Divider />
+                        <NavDropdown.Item>Sign Out</NavDropdown.Item>
+                    </NavDropdown>
+                </NavbarCollapse>
                 </Navbar.Collapse>
             </Container>
             </Navbar>
         )
     }
 }
+
+const data = {
+    name: "Nithin Pradeep"
+}
+
+const headerOptions = [{
+    title: "Home",
+    url: "/"
+},{
+    title: "Education",
+    url: "/education"
+},{
+    title: "Work Experience",
+    url: "/work-experience"
+},{
+    title: "Projects",
+    url: "/projects"
+}]
 
 export default Header
