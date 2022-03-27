@@ -41,3 +41,24 @@
   text-decoration: none;
   text-decoration-color: none;
 }
+
+.Footer-Title {
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  font-size: xx-large;
+}
+
+.Footer-Title2 {
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  font-size: x-large;
+}
+
+.Footer-Copyright {
+  padding: 10ch;
+  display: flex;
+  margin-left: auto;
+  margin-right: 0;
+}
