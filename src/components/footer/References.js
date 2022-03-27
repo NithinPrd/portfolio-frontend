@@ -8,7 +8,7 @@ export default function References(props) {
         <Card style={cardStyle} border={border} 
         onMouseEnter={() => setBorder("primary")}
         onMouseLeave={() => setBorder("secondary")}>
-            <Card.Img src={props.image} variant="bottom" height="75%" />
+            <Card.Img src={props.image} variant="bottom" />
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Text>Follow me, please. I'm desperate.</Card.Text>

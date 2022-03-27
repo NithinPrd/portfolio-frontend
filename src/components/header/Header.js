@@ -16,7 +16,7 @@ class Header extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav>
-                    {headerOptions.map((option) => <HeaderOption title={option.title} url={option.url} />)}
+                    {headerOptions.map((option) => <HeaderOption key={option.title} title={option.title} url={option.url} />)}
                 </Nav>
                 <NavbarCollapse className="justify-content-end">
                     <NavDropdown title={data.name}>
